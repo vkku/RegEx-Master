@@ -3,9 +3,18 @@ package me.vkku.jumpstart;
 import static me.vkku.utils.RegExUtils.runTest;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.junit.Test;
 
 public class MetaCharacters {
+
+  @Test
+  public void basicPattern() {
+    Pattern pattern = Pattern.compile("Deoxys!");
+    Matcher matcher = pattern.matcher("Deoxys!");
+    assertTrue(matcher.find());
+  }
 
   @Test
   public void givenText_whenMatchesWithDot_thenShouldMatchAll() {
