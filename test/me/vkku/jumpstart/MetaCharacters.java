@@ -17,6 +17,17 @@ public class MetaCharacters {
   }
 
   @Test
+  public void matchMultiple() {
+    Pattern pattern = Pattern.compile("pattern");
+    Matcher matcher = pattern.matcher("pattern patternista");
+    int matchCount = 0;
+    while (matcher.find()) {
+      matchCount++;
+    }
+    assertEquals(2, matchCount);
+  }
+
+  @Test
   public void givenText_whenMatchesWithDot_thenShouldMatchAll() {
     int matches = runTest(".", "any-String");
     System.out.println(matches);
